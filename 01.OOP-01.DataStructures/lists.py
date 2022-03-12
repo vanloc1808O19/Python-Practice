@@ -15,3 +15,10 @@ print(empty_list)
 print(str_list)
 print(int_list)
 print(mixed_list)
+
+# access items in Python list
+print(mixed_list[0])
+print(int_list[4])
+
+# access the last item
+print(str_list[-1])
