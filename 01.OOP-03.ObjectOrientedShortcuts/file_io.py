@@ -14,9 +14,10 @@ print(f.readline())
 print(f.read())
 f.close()
 
+
 # an alternative to method overloadding
 class Human:
-    def sayHello(self, name = None):
+    def say_hello(self, name=None):
         if name is not None:
             print('Hello ' + name)
         else:
@@ -27,7 +28,7 @@ class Human:
 obj = Human()
 
 # call the method, else part will be executed
-obj.sayHello()
+obj.say_hello()
 
 # call the method with a parameter, if part will be executed
-obj.sayHello('Loc')
+obj.say_hello('Loc')
