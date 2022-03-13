@@ -22,6 +22,17 @@ class FunkyBack:
 
 
 for seq in normal_list, CustomSequence(), FunkyBack():
-    print('\n{}'.format(seq.__class__.__name__), end="")
+    print('\n{}: '.format(seq.__class__.__name__), end="")
     for item in reversed(seq):
         print(item, end=", ")
+print("")
+
+# enumerate
+names = ['Lionel', 'Andres', 'Messi', 'Nguyen', 'Van', 'Loc']
+print(enumerate(names))
+
+print(list(enumerate(names)))
+
+for i, n in enumerate(names):
+    print('Names number: ' + str(i))
+    print(n)
