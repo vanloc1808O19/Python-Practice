@@ -52,3 +52,12 @@ x.append('HELLO')  # append() inherited from built-in list
 
 print(x[1])
 print(x[4])
+
+"""
+In above example, we set a three item list in Mylist and implicitly     init    method is called 
+and when we print the element x, we get the three item list ([‘a’,’b’,’c’]). Then we append another 
+element to this list. Later we ask for index 1 and index 4. But if you see the output, we  are  
+getting  element  from  the  (index-1)  what  we  have  asked  for.  As  we  know  list indexing 
+start from 0 but here the indexing start from 1 (that’s why we are getting the
+first item of the list).
+"""
