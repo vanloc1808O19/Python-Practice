@@ -22,3 +22,33 @@ dd['b'] = 20
 for key in dd.keys():
     print('{0} = {1}'.format(key, dd[key]))
 
+"""
+Let’s  extend  our  previous  example,  below  we  have  called  two  magic  methods  called
+    getitem     and     setitem     better invoked when we deal with list index.
+"""
+
+# mylist inherits from 'list' object but indexes from 1 instead of 0
+class Mylist(list):  # inherits from list
+    def __getitem__(self, index):
+        if index <= 0:
+            raise IndexError
+        else:
+            index -= 1
+            return list.__getitem__(self, index)    # this method is called when
+                                                    # we access a value with subscript like x[1]
+
+    def __setitem__(self, index, value):
+        if (index <= 0):
+            raise IndexError
+        else:
+            list.__setitem__(self, index, value)
+
+
+x = Mylist(['a', 'b', 'c'])  # __init__() inherited from built-in list
+
+print(x)  # __repr__() inherited from built-in list
+
+x.append('HELLO')  # append() inherited from built-in list
+
+print(x[1])
+print(x[4])
