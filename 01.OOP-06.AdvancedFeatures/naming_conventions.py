@@ -50,4 +50,29 @@ class GetSet(object):
 
     __mangle_name = 'no privacy'  # special variable
 
+    def __init__(self, value):
+        self._attrval = value  # _attrval is for internal use only
+        GetSet.instance_count += 1
+
+    @property
+    def var(self):
+        print('Getting the "var" attribute ')
+        return self._attrval
+
+    @var.setter
+    def var(self, value):
+        print('Setting the "var" attribute')
+        self._attrval = value
+
+    @var.deleter
+    def var(self):
+        print('Deleting the "var" attribute')
+        self._attrval = None
+
+
+cc = GetSet(5)
+cc.var = 10
+print(cc._attrval)
+print(cc._GetSet__mangle_name)
+
 
